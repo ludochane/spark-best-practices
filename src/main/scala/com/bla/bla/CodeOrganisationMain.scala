@@ -1,7 +1,8 @@
 package com.bla.bla
 
 import com.bla.bla.features.OrdersFeatures
-import com.bla.bla.utils.{Generators, SparkSession}
+import com.bla.bla.utils.Generators
+import com.bla.bla.utils.SparkSession._
 import org.apache.spark.sql.DataFrame
 
 object CodeOrganisationMain {
