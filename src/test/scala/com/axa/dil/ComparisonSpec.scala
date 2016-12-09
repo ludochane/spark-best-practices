@@ -1,5 +1,6 @@
+package com.axa.dil
+
 import com.axa.dil.models.Models._
-import com.axa.dil._
 import frameless.TypedDataset
 import org.apache.spark.sql.Dataset
 import org.scalatest.FlatSpec
@@ -7,7 +8,7 @@ import org.scalatest.FlatSpec
 /**
   *
   */
-class MySpec extends FlatSpec with WithSparkData {
+class ComparisonSpec extends FlatSpec with WithSparkParquet {
 
   "select column with dataset" should "pass" in {
     val names: Dataset[PersonName] = SelectColumn.withDataset(personsDS)
@@ -33,13 +34,20 @@ class MySpec extends FlatSpec with WithSparkData {
 
   "filter with dataset" should "pass" in {
     val ageDS: Dataset[Long] = Filter.withDataset(personsDS)
+    ageDS.explain()
     ageDS.show()
   }
 
   "filter with frameless" should "pass" in {
     val ageTD = Filter.withFrameless(personsTD)
-
+    ageTD.explain()
     ageTD.show().run()
+  }
+
+  "filter with dataframe" should "pass" in {
+    val ageTD = Filter.withDataframe(personsDF)
+    ageTD.explain()
+    ageTD.show()
   }
 
 

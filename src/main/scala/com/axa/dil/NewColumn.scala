@@ -15,6 +15,12 @@ object NewColumn extends Example {
     persons.withColumn("isAdult", persons("age") >= 18).as[PersonIsAdult]
   }
 
+  def withDatasetMap(persons: Dataset[Person]): Dataset[PersonIsAdult] = {
+    persons.map {
+      case Person(id, name, age) => PersonIsAdult(id, name, age, age >= 18)
+    }
+  }
+
   def withFrameless(persons: TypedDataset[Person]): TypedDataset[PersonIsAdult] = {
     // no withColumn function
     // use UDF

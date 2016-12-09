@@ -29,7 +29,7 @@ object Filter extends Example {
     // from parquet, will read only column age
     import spark.sqlContext.implicits._
 
-    dataframe.filter($"age" > 18).select($"age")
+    dataframe.filter($"age" === 18).select($"age")
   }
 
 }
