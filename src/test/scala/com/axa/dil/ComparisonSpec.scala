@@ -89,4 +89,12 @@ class ComparisonSpec extends FlatSpec with WithSparkParquet {
     totalPrice.show().run()
   }
 
+  "data encode with dataset" should "pass" in {
+    DateEncode.withDataset()
+  }
+
+  "data encode with frameless" should "pass" in {
+    DateEncode.withFrameless()
+  }
+
 }
