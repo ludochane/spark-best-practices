@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 /**
   *
   */
-trait Example {
+trait Sparkable {
 
   implicit  val spark = SparkSession
     .builder()

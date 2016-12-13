@@ -9,7 +9,7 @@ import org.apache.spark.sql.functions._
 /**
   *
   */
-object Aggregate extends Example {
+object Aggregate extends Sparkable {
 
   import spark.implicits._
 

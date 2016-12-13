@@ -7,7 +7,7 @@ import org.apache.spark.sql.Dataset
 /**
   *
   */
-object SelectColumn extends Example {
+object SelectColumn extends Sparkable {
 
   import spark.implicits._
 

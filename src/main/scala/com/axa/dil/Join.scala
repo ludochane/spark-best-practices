@@ -7,7 +7,7 @@ import org.apache.spark.sql.Dataset
 /**
   *
   */
-object Join extends Example {
+object Join extends Sparkable {
 
   import spark.implicits._
 

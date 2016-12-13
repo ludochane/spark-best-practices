@@ -7,7 +7,7 @@ import org.apache.spark.sql._
 /**
   *
   */
-object Filter extends Example {
+object Filter extends Sparkable {
 
   import spark.implicits._
 

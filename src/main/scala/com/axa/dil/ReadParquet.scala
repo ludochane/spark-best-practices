@@ -7,7 +7,7 @@ import org.apache.spark.sql.{Dataset, _}
 /**
   *
   */
-object ReadParquet extends Example {
+object ReadParquet extends Sparkable {
 
   import spark.implicits._
 

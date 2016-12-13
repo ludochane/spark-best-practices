@@ -53,26 +53,26 @@ class ComparisonSpec extends FlatSpec with WithSparkParquet {
 
   "join with dataset" should "pass" in {
     val personClaims: Dataset[PersonClaimFlat] = Join.withDataset(personsDS, claimsDS)
-
+    personClaims.explain()
     personClaims.show()
   }
 
   "join with frameless" should "pass" in {
     val personClaims: TypedDataset[PersonClaim] = Join.withFrameless(personsTD, claimsTD)
-
+    personClaims.explain()
     personClaims.show().run()
   }
 
 
   "aggregate with dataset" should "pass" in {
     val averageAge: Dataset[PersonAvgAge] = Aggregate.withDataset(personsDS)
-
+    averageAge.explain()
     averageAge.show()
   }
 
   "aggregate with frameless" should "pass" in {
     val averageAge: TypedDataset[PersonAvgAge] = Aggregate.withFrameless(personsTD)
-
+    averageAge.explain()
     averageAge.show().run()
   }
 
